@@ -16,10 +16,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000011941086716}
-  - 114: {fileID: 114000012108325848}
+  - component: {fileID: 4000011941086716}
+  - component: {fileID: 114000012108325848}
   m_Layer: 0
   m_Name: Emitter
   m_TagString: Untagged
@@ -36,10 +36,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 8.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114000012108325848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,4 +54,7 @@ MonoBehaviour:
   particlePrefab: {fileID: 1000010421801238, guid: 3c22536c902de4f47a5c801fa7d52e33,
     type: 2}
   interval: 5
+  time: 1
   redius: 2
+  scale_min: 0.3
+  scale_max: 0.6
