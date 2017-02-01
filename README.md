@@ -26,8 +26,3 @@
  - UIのイベント(クリックとか)を発生させてる。無視してて良い。
 
 # フォルダ構成の説明
-
-# Memo
-https://www.assetstore.unity3d.com/jp/#!/content/42866
-
-https://www.assetstore.unity3d.com/jp/#!/content/39948
