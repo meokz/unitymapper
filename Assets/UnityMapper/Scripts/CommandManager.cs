@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -34,6 +35,13 @@ public class CommandManager : MonoBehaviour {
     public GameObject _light;
     public void LightIntencyOnValueChanged(float value) {
       _light.GetComponent<Light>().intensity = value * 2;
+    }
+
+    public GameObject cameraDegreeText;
+    public void CameraDegreeOnValueChanged(float value) {
+        GameObject.Find("ScriptManager").GetComponent<CameraPositionController>().Degree = value;
+        var text = "CameraDegree(" + string.Format("{0:f2}", value) + ")";
+        cameraDegreeText.GetComponent<UnityEngine.UI.Text>().text = text;
     }
 
     int count = 0;

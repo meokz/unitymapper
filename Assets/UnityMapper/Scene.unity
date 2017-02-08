@@ -608,7 +608,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Light Intency
+  m_Text: CameraDegree(10)
 --- !u!222 &186047509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -809,20 +809,20 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1766547838}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 526796174}
-        m_MethodName: LightIntencyOnValueChanged
+        m_MethodName: CameraDegreeOnValueChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2352,8 +2352,9 @@ GameObject:
   - component: {fileID: 526796172}
   - component: {fileID: 526796173}
   - component: {fileID: 526796174}
+  - component: {fileID: 526796175}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: ScriptManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2402,6 +2403,7 @@ MonoBehaviour:
   projecter2: {fileID: 729043785}
   projecter3: {fileID: 8099578}
   _light: {fileID: 1214168202}
+  cameraDegreeText: {fileID: 186047506}
   projectedObject:
   - {fileID: 1455767544}
   - {fileID: 255319147}
@@ -2409,6 +2411,21 @@ MonoBehaviour:
   - {fileID: 192941302}
   - {fileID: 1378921730}
   - {fileID: 1281351559}
+--- !u!114 &526796175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 526796171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110038c0c680d7b4ea1e462051e31601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraCenter: {fileID: 777675492}
+  CameraRight: {fileID: 155432347}
+  CameraLeft: {fileID: 1974760644}
+  Distance: -10
 --- !u!1 &554319893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,7 +2436,7 @@ GameObject:
   - component: {fileID: 554319894}
   - component: {fileID: 554319895}
   m_Layer: 0
-  m_Name: LightIntency
+  m_Name: CameraDegree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2442,8 +2459,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100.899994, y: -312}
-  m_SizeDelta: {x: 150, y: 60}
+  m_AnchoredPosition: {x: 104, y: -296}
+  m_SizeDelta: {x: 180, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554319895
 MonoBehaviour:
