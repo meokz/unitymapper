@@ -18,7 +18,6 @@ public class RenderMesh : MonoBehaviour {
         get { return isHide; }
         set {
             foreach(var cntr in controllerList) {
-                // cntr.GetComponent<MeshRenderer>().enabled = value;
                 cntr.SetActive(value);
             }
             isHide = value;
@@ -53,17 +52,18 @@ public class RenderMesh : MonoBehaviour {
     RenderMeshController holdObject;
     float distance = 100.0f;
     void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            var vec = Display.RelativeMouseAt(Input.mousePosition);
+        var mousePos = Display.RelativeMouseAt(Input.mousePosition);
+        // マウスカーソルのあるプロジェクタと違ったら処理しない
+        if(projecterNo != mousePos.z) return;
 
+        if (Input.GetMouseButtonDown(0)) {
             // Rayの生成
-            var ray = this.projecter.ScreenPointToRay(Input.mousePosition);
+            var ray = this.projecter.ScreenPointToRay((Vector2)mousePos);
             var hit = new RaycastHit();
             // Rayとオブジェクトの当たり判定
             if (Physics.Raycast(ray, out hit, distance)) {
-                // Debug.Log(hit.collider.gameObject.name);
                 holdObject = hit.collider.gameObject.GetComponent<RenderMeshController>();
-                holdObject.MouseDown();
+                holdObject.MouseDown(mousePos);
             }
         } else if (Input.GetMouseButtonUp(0)) {
             if (holdObject != null) {
@@ -72,7 +72,7 @@ public class RenderMesh : MonoBehaviour {
             }
         } else {
             if (holdObject != null) {
-                holdObject.MouseDrag();
+                holdObject.MouseDrag(mousePos);
             }
         }
     }
@@ -113,8 +113,6 @@ public class RenderMesh : MonoBehaviour {
                 vertices[i].x = float.Parse(block[0]);
                 vertices[i].y = float.Parse(block[1]);
                 vertices[i].z = float.Parse(block[2]);
-                // _mesh.vertices[i] = vertices[i];
-                // _mesh.RecalculateBounds();
             }
         }
 

@@ -5,29 +5,12 @@ using System.Collections.Generic;
 public class CommandManager : MonoBehaviour {
 
     bool isCalibration = false;
+    public List<GameObject> renderMesh;
     public void CalibrationEnable() {
         isCalibration = !isCalibration;
 
-        if (isCalibration)  SwitchCalibration();
-        else {
-            foreach (var mesh in renderMesh)
-                mesh.GetComponent<RenderMesh>().IsHide = false;
-        }
-    }
-
-    int calibration = 0;
-    public List<GameObject> renderMesh;
-    public void SwitchCalibration() {
-        int display = Display.displays.Length;
-        if (display != 1) display -= 1;
-        else display = 1;
-
-        for (int i = 0; i < display; i++) {
-            if (i == calibration % display)
-                renderMesh[i].GetComponent<RenderMesh>().IsHide = true;
-            else renderMesh[i].GetComponent<RenderMesh>().IsHide = false;
-        }
-        calibration += 1;
+        foreach (var mesh in renderMesh)
+            mesh.GetComponent<RenderMesh>().IsHide = isCalibration;
     }
 
     bool isProjecter1 = false;
@@ -64,5 +47,11 @@ public class CommandManager : MonoBehaviour {
                 projectedObject[i].SetActive(false);
             }
         }
+    }
+
+    void OnGUI() {
+        var mousePos = Display.RelativeMouseAt (Input.mousePosition);
+        GUI.Label(new Rect(10, 10, 200, 20), "mouse position:" + ((Vector2)mousePos).ToString());
+        GUI.Label(new Rect(10, 30, 200, 20), "display id:" + mousePos.z);
     }
 }

@@ -38,25 +38,22 @@ public class RenderMeshController : MonoBehaviour {
         this.IsSelected = false;
     }
 
-    public void MouseDown() {
+    public void MouseDown(Vector2 mousePos) {
         this.IsSelected = true;
 
         //カメラから見たオブジェクトの現在位置を画面位置座標に変換
         screenPoint = projecter.WorldToScreenPoint(this.transform.position);
 
-        float x = Input.mousePosition.x;
-        float y = Input.mousePosition.y;
-        offset = this.transform.position - projecter.ScreenToWorldPoint(new Vector3(x, y, screenPoint.z));
+        offset = this.transform.position - projecter.ScreenToWorldPoint(
+            new Vector3(mousePos.x, mousePos.y, 0));
     }
 
-    public void MouseDrag() { 
+    public void MouseDrag(Vector2 mousePos) { 
         if (!this.IsSelected) return;
 
-        float x = Input.mousePosition.x;
-        float y = Input.mousePosition.y;
-
         //ドラッグ時のマウス位置をシーン上の3D空間の座標に変換する
-        Vector3 currentScreenPoint = new Vector3(x, y, screenPoint.z);
+        // Vector3 currentScreenPoint = new Vector3(mousePos.x, mousePos.y, screenPoint.z);
+        Vector3 currentScreenPoint = new Vector3(mousePos.x, mousePos.y, 0);
 
         //上記にクリックした場所の差を足すことによって、オブジェクトを移動する座標位置を求める
         Vector3 currentPosition = projecter.ScreenToWorldPoint(currentScreenPoint) + offset;
@@ -72,38 +69,4 @@ public class RenderMeshController : MonoBehaviour {
             OnPositionChanged(this, new RMControllerEventArgs(int.Parse(this.gameObject.name), this.transform.localPosition));
         }
     }
-
-    /*
-    void OnMouseDown() {
-        this.IsSelected = true;
-
-        //カメラから見たオブジェクトの現在位置を画面位置座標に変換
-        screenPoint = _camera.WorldToScreenPoint(this.transform.position);
-        
-        float x = Input.mousePosition.x;
-        float y = Input.mousePosition.y;
-        offset = this.transform.position - _camera.ScreenToWorldPoint(new Vector3(x, y, screenPoint.z));
-    }
-
-    void OnMouseDrag() {
-        float x = Input.mousePosition.x;
-        float y = Input.mousePosition.y;
-
-        //ドラッグ時のマウス位置をシーン上の3D空間の座標に変換する
-        Vector3 currentScreenPoint = new Vector3(x, y, screenPoint.z);
-
-        //上記にクリックした場所の差を足すことによって、オブジェクトを移動する座標位置を求める
-        Vector3 currentPosition = _camera.ScreenToWorldPoint(currentScreenPoint) + offset;
-
-        //オブジェクトの位置を変更する
-        this.transform.position = currentPosition;
-    }
-
-    void OnMouseUp() {
-        this.IsSelected = false;
-
-        if (OnPositionChanged != null) {
-            OnPositionChanged(this, new RMControllerEventArgs(int.Parse(this.gameObject.name), this.transform.localPosition));
-        }
-    }*/
 }
