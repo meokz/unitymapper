@@ -6,6 +6,8 @@ public class InverteCameraTexture : MonoBehaviour {
     Camera _camera;
 
     void Start() {
+        // プロジェクタからそのまま映像を投影すると左右反転で映ってしまうので
+        // Unity側からあらかじめ映像を反転させて投影します．
         _camera = this.GetComponent<Camera>();
         mat = _camera.projectionMatrix * Matrix4x4.Scale(new Vector3(-1, 1, 1));
     }

@@ -8,6 +8,7 @@ public class CommandManager : MonoBehaviour {
     bool isCalibration = false;
     public List<GameObject> renderMesh;
     public void CalibrationEnable() {
+        // キャリブレーションの有効化
         isCalibration = !isCalibration;
 
         foreach (var mesh in renderMesh)
@@ -17,6 +18,7 @@ public class CommandManager : MonoBehaviour {
     bool isProjecter1 = false;
     public GameObject projecter1;
     public void ActivateProjecter1() {
+        // プロジェクタの有効化
         Display.displays[1].Activate();
     }
 
@@ -32,13 +34,9 @@ public class CommandManager : MonoBehaviour {
         Display.displays[3].Activate();
     }
 
-    public GameObject _light;
-    public void LightIntencyOnValueChanged(float value) {
-      _light.GetComponent<Light>().intensity = value * 2;
-    }
-
     public GameObject cameraDegreeText;
     public void CameraDegreeOnValueChanged(float value) {
+        // プロジェクタ間の角度の調整
         GameObject.Find("ScriptManager").GetComponent<CameraPositionController>().Degree = value;
         var text = "CameraDegree(" + string.Format("{0:f2}", value) + ")";
         cameraDegreeText.GetComponent<UnityEngine.UI.Text>().text = text;
@@ -47,6 +45,7 @@ public class CommandManager : MonoBehaviour {
     int count = 0;
     public List<GameObject> projectedObject;
     public void SwitchModelOnClick() {
+        // 表示するオブジェクトの切り替え
         count += 1;
         for(int i = 0; i < projectedObject.Count; i++) {
             if(i == count % projectedObject.Count) {

@@ -52,7 +52,6 @@ public class RenderMeshController : MonoBehaviour {
         if (!this.IsSelected) return;
 
         //ドラッグ時のマウス位置をシーン上の3D空間の座標に変換する
-        // Vector3 currentScreenPoint = new Vector3(mousePos.x, mousePos.y, screenPoint.z);
         Vector3 currentScreenPoint = new Vector3(mousePos.x, mousePos.y, 0);
 
         //上記にクリックした場所の差を足すことによって、オブジェクトを移動する座標位置を求める

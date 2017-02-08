@@ -20,6 +20,7 @@ public class CameraPositionController : MonoBehaviour {
 	public float Distance = -10.0f;
 
 	void OnAngleChanged() {
+		// 角度が変更されたら，角度に合わせてカメラの座標を再構成する．
 		float radian = this.Degree * Mathf.Deg2Rad;
 
 		float x = Distance * Mathf.Sin(radian);
