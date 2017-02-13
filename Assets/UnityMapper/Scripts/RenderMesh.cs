@@ -53,7 +53,7 @@ public class RenderMesh : MonoBehaviour {
     float distance = 100.0f;
     void Update() {
         var mousePos = Display.RelativeMouseAt(Input.mousePosition);
-        // マウスカーソルのあるプロジェクタと違ったら処理しない
+        // マウスカーソルのあるプロジェクタではなかったら除外
         if(projecterNo != mousePos.z) return;
 
         if (Input.GetMouseButtonDown(0)) {
@@ -78,6 +78,7 @@ public class RenderMesh : MonoBehaviour {
     }
 
     private void RenderMeshController_OnPositionChanged(object sender, RMControllerEventArgs e) {
+        // MeshControllerが動いたときに呼ばれる
         // 頂点の位置 = コントローラの移動後の座標
         vertices[e.id] = e.position;
         _mesh.vertices = vertices;
@@ -92,6 +93,7 @@ public class RenderMesh : MonoBehaviour {
     }
 
     void Save() {
+      // 頂点座標をファイルに保存
         var fileInfo = new FileInfo(Application.dataPath + "/../" + "Projecter" + projecterNo + ".txt");
 
         using (StreamWriter sw = fileInfo.CreateText()) {
