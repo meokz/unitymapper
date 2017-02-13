@@ -1,17 +1,14 @@
 # 動作環境
 - Windows10
-- Leap_Motion_SDK_Windows_3.1.3
+- Leap Motion SDK Windows 3.1.3
 
 # 開発環境
-- ~~Unity 5.4.0f3 Personal~~
 - Unity 5.5.0f3 Personal
 
 # 導入ライブラリ＆アセット
 - StandardAssets https://www.assetstore.unity3d.com/jp/#!/content/32351 (不要なものは除去済)
 - Unityちゃん http://unity-chan.com/contents/guideline/
-- ~~LeapMotion_CoreAsset_Orion_4.1.4.unitypackage~~
-- LeapMotion_CoreAsset_Orion_4.1.5.unitypackage
-- ~~Particle Ribbon https://www.assetstore.unity3d.com/jp/#!/content/42866~~
+- LeapMotion CoreAsset Orion 4.1.5.unitypackage
 
 # Hierarchyの説明
 - ObjectWorld
@@ -26,3 +23,15 @@
  - UIのイベント(クリックとか)を発生させてる。無視してて良い。
 
 # フォルダ構成の説明
+- Editor
+ - Unity Editorの拡張．普段触ることはない．
+- LeapMotion
+ - LeapMotionのライブラリ．
+- Plugin
+ - DLLファイルの配置場所．
+- Standard Assets
+ - スタンダードアセット．不要なものは除いている．ParticleSystemやPhysicsMaterialが使えるかもしれない．
+- UnityChan
+ - ユニティちゃんのモデルやモーションデータ．
+- UnityMapper
+ - 大峠が追加したソースコードやパーティクルなどのPrefabs．
