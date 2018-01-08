@@ -1,6 +1,6 @@
 # 動作環境
 - Windows10
-- Leap Motion SDK Windows 3.1.3
+- macOS High Sierra
 
 # 開発環境
 - Unity 2017.2.0f3 Personal
@@ -8,7 +8,6 @@
 # 導入ライブラリ＆アセット
 - StandardAssets https://www.assetstore.unity3d.com/jp/#!/content/32351 (不要なものは除去済)
 - Unityちゃん http://unity-chan.com/contents/guideline/
-- LeapMotion CoreAsset Orion 4.1.5.unitypackage
 
 # Hierarchyの説明
 - ObjectWorld
@@ -25,8 +24,6 @@
 # フォルダ構成の説明
 - Editor
 	- Unity Editorの拡張．普段触ることはない．
-- LeapMotion
-	- LeapMotionのライブラリ．
 - Plugin
 	- DLLファイルの配置場所．
 - Standard Assets
