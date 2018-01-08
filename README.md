@@ -12,26 +12,26 @@
 
 # Hierarchyの説明
 - ObjectWorld
- - Unity上の実世界。UIなどを表示するMainDisplay、Light、それぞれのプロジェクタ(を模したカメラ)が設置されている。ProjectedObjectに投影したい物体を追加してく。
+	- Unity上の実世界。UIなどを表示するMainDisplay、Light、それぞれのプロジェクタ(を模したカメラ)が設置されている。ProjectedObjectに投影したい物体を追加してく。
 - VirtualWorld
- - キャリブレーション用の仮想世界。ObjectWoldのカメラから持ってきた映像を平面に描画し、その平面を変形させ、それをカメラで映すことで映像をキャリブレーションする。
+	- キャリブレーション用の仮想世界。ObjectWoldのカメラから持ってきた映像を平面に描画し、その平面を変形させ、それをカメラで映すことで映像をキャリブレーションする。
 - Manager
- - スクリプトを貼り付けていくオブジェクト。全体を操作するスクリプトはここに貼り付けておくと分散しないため、ソースコードを追いやすい。
+	- スクリプトを貼り付けていくオブジェクト。全体を操作するスクリプトはここに貼り付けておくと分散しないため、ソースコードを追いやすい。
 - Canvas
- - UIを作る
+	- UIを作る
 - EventSystem
- - UIのイベント(クリックとか)を発生させてる。無視してて良い。
+	- UIのイベント(クリックとか)を発生させてる。無視してて良い。
 
 # フォルダ構成の説明
 - Editor
- - Unity Editorの拡張．普段触ることはない．
+	- Unity Editorの拡張．普段触ることはない．
 - LeapMotion
- - LeapMotionのライブラリ．
+	- LeapMotionのライブラリ．
 - Plugin
- - DLLファイルの配置場所．
+	- DLLファイルの配置場所．
 - Standard Assets
- - スタンダードアセット．不要なものは除いている．ParticleSystemやPhysicsMaterialが使えるかもしれない．
+	- スタンダードアセット．不要なものは除いている．ParticleSystemやPhysicsMaterialが使えるかもしれない．
 - UnityChan
- - ユニティちゃんのモデルやモーションデータ．
+	- ユニティちゃんのモデルやモーションデータ．
 - UnityMapper
- - 大峠が追加したソースコードやパーティクルなどのPrefabs．
+	- 大峠が追加したソースコードやパーティクルなどのPrefabs．
