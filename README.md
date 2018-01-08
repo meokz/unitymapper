@@ -3,7 +3,7 @@
 - Leap Motion SDK Windows 3.1.3
 
 # 開発環境
-- Unity 5.5.0f3 Personal
+- Unity 2017.2.0f3 Personal
 
 # 導入ライブラリ＆アセット
 - StandardAssets https://www.assetstore.unity3d.com/jp/#!/content/32351 (不要なものは除去済)
