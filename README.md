@@ -1,3 +1,6 @@
+# unitymapper
+Unityでマルチプロジェクターなプロジェクションマッピングを行うためのソフトウェア。
+
 # 動作環境
 - Windows10
 - macOS High Sierra
@@ -31,4 +34,4 @@
 - UnityChan
 	- ユニティちゃんのモデルやモーションデータ．
 - UnityMapper
-	- 大峠が追加したソースコードやパーティクルなどのPrefabs．
+	- [meokz](https://github.com/meokz)が追加したソースコードやパーティクルなどのPrefabs．
